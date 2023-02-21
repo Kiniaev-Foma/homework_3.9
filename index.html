@@ -7,8 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form action="result.html" method="post">
+        <input name="login">
+        <input type="password" required>
+        <input type="checkbox" required>
 	    <button>Осторожно, форма отправляется</button>
     </form>
+    <h2>Любимый язык программирования</h2>
+<input class="lang-radio" type="radio" name="language" value="javascript">
+JavaScript
+<input class="lang-radio" type="radio" name="language" value="typescript">
+TypeScript
+<button class="button">Голосуй!</button>
+<script>
+	const button = document.querySelector('.button');
+
+	button.addEventListener('click', () => {
+		document.querySelectorAll('.lang-radio').forEach(langRadio => {
+			if (langRadio.checked) {
+				console.log(langRadio.value);
+			}
+		});
+	});
+</script>
 </body>
 </html>
