@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <form action="result.html" method="post">
-        <input class="inp" name="login" required>
-        <input class="pass" type="password" required>
-        <input type="checkbox" required>
-	    <button>Осторожно, форма отправляется</button>
+    <form >
+        <input type="text" class="inp__login" name="login" required>
+        <input type="password" class="inp-pass" required>
+	    <button class="btn">Осторожно, форма отправляется</button>
     </form>
 <script>
-    const input = document.querySelector('.inp')
-
-    input addEventListener('click', () => {
-
-        
-
+    // 
+    const input__password = document.querySelector('.inp-pass')
+    const input__login = document.querySelector('.inp__login')
+    const button = document.querySelector('.btn')
+   
+    button.addEventListener('click', () => {
+        if (input__login.value === '') {
+            input__login.classList.add('wrong');
+        }
+        else{
+            input__login.classList.add('pass');
+        }
     })
 
+    button.addEventListener('click', () => {
+        if (input__password.value === '') {
+            input__password.classList.add('wrong');
+        }
+        else{
+            input__password.classList.add('pass');
+        }
+    })
 </script>
 </body>
 </html>
